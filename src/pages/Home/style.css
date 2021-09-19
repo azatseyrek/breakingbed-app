@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  
 }
 
 .my-masonry-grid {
@@ -16,7 +15,16 @@
   background-clip: padding-box;
 }
 
+.my-masonry-grid_column > div > a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}
 
+.my-masonry-grid_column > div > a :hover {
+  color: #09351a;
+}
 
 .character {
   width: 400px;
@@ -24,31 +32,25 @@
   border-radius: 10%;
   margin: 40px;
   display: flexbox;
-  
 }
 h3 {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    font-size: 20px;
-
-
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
 }
 
 .progress {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-   
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-.load_btn{
+.load_btn {
   padding: 15px;
   display: flex;
   text-align: center;
   justify-content: center;
- 
 }
 
 .load_btn button {
@@ -56,5 +58,37 @@ h3 {
   width: auto;
   font-size: 25px;
   padding: 15px;
-  font-family: fantasy;
+  font-family: monospace;
+  color: #98c5aa;
+  background-color: #022203; /* Green */
+  border-radius: 8%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.char__name {
+  display: flex;
+  /* text-align: center; */
+  font-size: 60px;
+  justify-content: center;
+  color: #022203;
+  font-family: monospace;
+  text-decoration: underline;
+}
+
+#char__img {
+  width: 400px;
+  height: 600px;
+  border-radius: 5%;
+  margin: 40px;
+  display: flexbox;
+  float: left;
+}
+
+pre {
+  font-size: 30px;
+  color: #042b13;
 }

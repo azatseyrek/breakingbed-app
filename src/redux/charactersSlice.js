@@ -18,7 +18,7 @@ export const chractersSlice = createSlice({
 
   initialState: {
     items: [],
-    isLoading : false,
+    status : "idle",
     error : "",
     page: 0,
     hasNextPage: true
@@ -27,24 +27,24 @@ export const chractersSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchCharacters.pending]: (state, action) => {
-        state.isLoading = true;
+        state.status = "loading";
     },
 
     [fetchCharacters.fulfilled]: (state, action) => {
       state.items = [...state.items, ...action.payload];
-      state.isLoading= false;
+      state.status= "succeeded";
       state.page +=1
 
       if(action.payload.length <12) {
         state.hasNextPage = false
       }
 
-      console.log(action.payload);
+
 
     },
 
     [fetchCharacters.rejected]: (state, action) => {
-      state.isLoading= false;
+      state.status= 'failed';
       state.error = action.error.message;
     }
   },

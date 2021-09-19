@@ -3,10 +3,8 @@
 }
 
 .container {
-  background: rgb(8,73,17);
-  background: linear-gradient(180deg, rgba(8,73,17,1) 0%, rgba(9,63,14,1) 13%, rgba(9,59,12,1) 19%, rgba(9,54,11,1) 25%, rgba(9,50,10,1) 30%, rgba(9,48,9,1) 33%, rgba(28,172,120,1) 66%, rgba(151,207,171,0.8138715765449438) 100%);
-  
-
+  background: rgb(13,62,16);
+  background: linear-gradient(90deg, rgba(13,62,16,0.9027058462078652) 0%, rgba(54,148,87,0.7173125877808989) 50%, rgba(74,104,85,0.6864137113764045) 100%);
 }
 
 .App-logo {

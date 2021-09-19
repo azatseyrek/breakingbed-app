@@ -4,23 +4,27 @@ import { useSelector, useDispatch } from "react-redux";
 import Loading from "../../components/loading";
 import { fetchCharacters } from "../../redux/charactersSlice";
 
+import { Link } from "react-router-dom";
+
 import styles from "./style.css";
 
 // import charactersSlice from '../../redux/charactersSlice'
 
 const Home = () => {
   const characters = useSelector((state) => state.characters.items);
-  const isLoading = useSelector((state) => state.characters.isLoading);
+  const status = useSelector((state) => state.characters.status);
   const error = useSelector((state) => state.characters.error);
   const nextPage = useSelector((state) => state.characters.page);
   const hasNextPage = useSelector((state) => state.characters.hasNextPage);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCharacters());
-  }, [dispatch]);
+    if (status === "idle") {
+      dispatch(fetchCharacters());
+    }
+  }, [dispatch, status]);
 
-  if (error) {
+  if (status === "failed") {
     return <div>Error: {error}</div>;
   }
 
@@ -33,19 +37,21 @@ const Home = () => {
       >
         {characters.map((character) => (
           <div key={character.char_id}>
-            <img
-              alt={character.name}
-              src={character.img}
-              className="character"
-            />
-            <h3>{character.name}</h3>
+            <Link to={`/char/${character.char_id}`}>
+              <img
+                alt={character.name}
+                src={character.img}
+                className="character"
+              />
+              <h3>{character.name}</h3>
+            </Link>
           </div>
         ))}
       </Masonry>
       <div className="load_btn">
-        {isLoading && <Loading />}
+        {status === "loading" && <Loading />}
 
-        {hasNextPage && !isLoading && (
+        {hasNextPage && status !== "loading" && (
           <button onClick={() => dispatch(fetchCharacters(nextPage))}>
             Load More ({nextPage})
           </button>

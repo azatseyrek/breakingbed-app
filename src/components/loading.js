@@ -1,6 +1,6 @@
 import React from "react";
 import ReactLoading from "react-loading";
-import style from '../pages/Home/style.css'
+import style from '../pages/Home/style.css';
 
 const Loading = ({ type, color }) => (
   <div className='progress'>
