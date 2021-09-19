@@ -5,9 +5,9 @@ const char_limit = 12;
 
 export const fetchCharacters = createAsyncThunk(
   "characters/fetchCharacters",
-  async () => {
+  async (page) => {
     const res = await axios(
-      `${process.env.REACT_APP_API_BASE_ENDPOINT}/characters?limit=${char_limit}`
+      `${process.env.REACT_APP_API_BASE_ENDPOINT}/characters?limit=${char_limit}&offset=${page * char_limit}`
     );
     return res.data;
   }
@@ -19,7 +19,9 @@ export const chractersSlice = createSlice({
   initialState: {
     items: [],
     isLoading : false,
-    error : ""
+    error : "",
+    page: 0,
+    hasNextPage: true
   },
 
   reducers: {},
@@ -29,8 +31,16 @@ export const chractersSlice = createSlice({
     },
 
     [fetchCharacters.fulfilled]: (state, action) => {
-      state.items = action.payload;
+      state.items = [...state.items, ...action.payload];
       state.isLoading= false;
+      state.page +=1
+
+      if(action.payload.length <12) {
+        state.hasNextPage = false
+      }
+
+      console.log(action.payload);
+
     },
 
     [fetchCharacters.rejected]: (state, action) => {

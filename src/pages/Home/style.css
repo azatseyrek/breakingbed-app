@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 
 .my-masonry-grid {
@@ -15,15 +16,7 @@
   background-clip: padding-box;
 }
 
-/* Style your items */
-.my-masonry-grid_column > div {
-  /* change div to reference your elements you put in <Masonry> */
-  /* background: grey;
-    border-radius: 10%;
-    margin-bottom: 30px;
-    width: 420px;
-    height: 620px; */
-}
+
 
 .character {
   width: 400px;
@@ -46,6 +39,22 @@ h3 {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 50% ;
+   
 
+}
+
+.load_btn{
+  padding: 15px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+ 
+}
+
+.load_btn button {
+  height: 60px;
+  width: auto;
+  font-size: 25px;
+  padding: 15px;
+  font-family: fantasy;
 }

@@ -6,10 +6,10 @@ const Loading = ({ type, color }) => (
   <div className='progress'>
     <ReactLoading
 
-      type={"spin"}
+      type={"bubbles"}
       color={"black"}
-      height={667}
-      width={375}
+      height={50}
+      width={75}
     />
   </div>
 );

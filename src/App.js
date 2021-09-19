@@ -8,7 +8,7 @@ import Loading from "./components/loading";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container">
 
         <Switch>
           <Route path="/" component={Home}></Route>
