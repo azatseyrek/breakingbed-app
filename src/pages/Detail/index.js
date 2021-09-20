@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 
-import styles from '../Home/style.css'
+import styles from '../Home/style.css';
 import Loading from "../../components/loading";
 
 
@@ -20,7 +20,7 @@ const Detail = () => {
   }, [char_id]);
 
   return (
-    <div>
+    <div className="detail__container">
         {
             loading && <Loading/>
         }

@@ -3,8 +3,13 @@
 }
 
 .container {
-  background: rgb(13,62,16);
-  background: linear-gradient(90deg, rgba(13,62,16,0.9027058462078652) 0%, rgba(54,148,87,0.7173125877808989) 50%, rgba(74,104,85,0.6864137113764045) 100%);
+  background: rgb(13, 62, 16);
+  background: linear-gradient(
+    90deg,
+    rgba(13, 62, 16, 0.9027058462078652) 0%,
+    rgba(54, 148, 87, 0.7173125877808989) 50%,
+    rgba(74, 104, 85, 0.6864137113764045) 100%
+  );
 }
 
 .App-logo {
@@ -40,4 +45,32 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+a {
+  margin: 10px;
+  padding-top: 30px;
+  text-decoration: none;
+  font-size: 30px;
+  color: rgb(176, 238, 197);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+a:hover {
+  color: rgb(1, 20, 1);
+}
+
+.navbar {
+  padding: 10px;
+  margin-left: 40px;
+
+
+
+
+}
+
+ul {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
 }

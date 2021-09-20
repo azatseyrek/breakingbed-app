@@ -65,13 +65,12 @@ h3 {
 }
 
 .logo {
-  display: flex;
+display: flex;
   justify-content: center;
 }
 
 .char__name {
   display: flex;
-  /* text-align: center; */
   font-size: 60px;
   justify-content: center;
   color: #022203;
@@ -91,4 +90,54 @@ h3 {
 pre {
   font-size: 30px;
   color: #042b13;
+}
+
+.detail__container {
+
+  height: 100vh;
+}
+
+.queto__item {
+  color: black;
+}
+
+.quote_container {
+  padding: 40px;
+}
+
+
+.quote_container h1 {
+  color: #042b13;
+  text-align: center;
+  font-size: 90px;
+  font-family: cursive;
+
+  font-weight: 900;
+
+  margin-top: -30px;
+
+
+
+
+}
+
+.queto {
+  color: #000a04;
+  font-size: 28px;
+  
+  text-align: center;
+  font-family: cursive;
+  font-weight: 600;
+
+}
+
+.all__quotes {
+  text-align: center;
+  padding: 15px;
+}
+
+strong {
+  color: #b1cabb;
+  font-size: 18px;
+  font-family: monospace;
 }

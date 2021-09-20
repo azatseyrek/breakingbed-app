@@ -1,14 +1,18 @@
-import React from 'react';
-import logo from "../images/breakingbad.png"
-import style from '../pages/Home/style.css';
+import React, { memo } from "react";
+import logo from "../images/breakingbad.png";
+import style from "../pages/Home/style.css";
+
+import { Link } from "react-router-dom";
 
 
-const Title = () => {
-    return (
-        <div className="logo">
-            <img alt="" src={logo} />
-        </div>
-    )
-}
+const Title = memo( () => {
+  return (
+    <div className="logo">
+      <Link to='/'>
+        <img alt="" src={logo} />
+      </Link>
+    </div>
+  );
+});
 
-export default Title
+export default Title;
